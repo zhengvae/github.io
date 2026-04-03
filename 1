@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标志明码查询</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* 【完全匹配截图】宋体 + 精准字号 */
+            font-family: SimSun, "宋体", Arial, sans-serif;
+            font-size: 12px;
+            background-color: #cccccc;
+            padding: 10px;
+            line-height: 1.4;
+            min-width: 50%;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #cccccc;
+            margin-bottom: 0;
+            min-width: 50%;
+        }
+        td {
+            border: 1px solid #999;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+        /* 标题：上+左+右边框显示，下边框隐藏 + 中间无竖线 */
+        .top-title td {
+            padding: 6px;
+            font-weight: bold;
+            font-size: 12px;
+            border-top: 1px solid #999;
+            border-left: 1px solid #999;
+            border-right: none;
+            border-bottom: none;
+        }
+        .btn-group {
+            text-align: right;
+            border-left: none !important;
+            border-right: 1px solid #999 !important;
+            border-top: 1px solid #999 !important;
+            border-bottom: none !important;
+        }
+        button {
+            font-family: SimSun, "宋体", sans-serif;
+            font-size: 12px;
+            padding: 1px 5px;
+            margin-left: 5px;
+        }
+        .text-input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #000;
+            background-color: transparent;
+            font-family: SimSun, "宋体", sans-serif;
+            font-size: 12px;
+            outline: none;
+        }
+        .section-title {
+            color: #cc0000;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 4px 0;
+        }
+        .tip-normal {
+            color: #000000;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        .tip-red {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .info-table {
+            margin-bottom: 8px;
+        }
+        /* 查询次数：只显示上下边框 */
+        .query-times {
+            border-top: 1px solid #999 !important;
+            border-bottom: 1px solid #999 !important;
+            border-left: none !important;
+            border-right: none !important;
+            text-align: left !important;
+            width: 70px !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部标题 -->
+    <table>
+        <tr class="top-title">
+            <td>标志明码查询</td>
+            <td class="btn-group">
+                <button>查询</button>
+                <button>重置</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 查询栏 -->
+    <table class="info-table">
+        <tr>
+            <td style="width: 80px; border-right: none !important; padding:4px 6px !important;">标志明码:</td>
+            <td style="width: 40%; border-right: none !important; border-left: none !important; padding:4px 0px !important;">
+                <input type="text" class="text-input" value="72650AA04448AA" readonly>
+            </td>
+            
+            <td class="query-times">查询次数:</td>
+            <td style="width: 30px; border-right: none !important; border-left: none !important; padding-left: 2px !important;">
+                <input type="text" class="text-input" value=" 7" readonly>
+            </td>
+            
+            <td style="width: 150px; text-align: right; padding-right:10px !important; border-right: none !important; border-left: none !important;">上次查询IP地址:</td>
+            <td style="border-left: none !important; border-right: 1px solid #999 !important;">
+                <input type="text" class="text-input" id="ipAddr" readonly>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 产品生产信息 -->
+    <table class="info-table">
+        <tr>
+            <td colspan="4" class="section-title" style="padding-left:6px;">产品生产信息</td>
+        </tr>
+        <tr>
+            <td style="width: 120px;">生产厂家</td>
+            <td><input type="text" class="text-input" value="中山市东凤镇艾民照明电器厂" readonly></td>
+            <td style="width: 120px;">产品档案号</td>
+            <td><input type="text" class="text-input" value="33C0289F7B744305E0638470770AAA1F" readonly></td>
+        </tr>
+        <tr>
+            <td>产品名称</td>
+            <td><input type="text" class="text-input" value="消防应急照明和疏散指示产品->消防应急照明和疏散指示产品->消防应急照明灯具->AM-ZFZD-E3" readonly></td>
+            <td>规格型号</td>
+            <td><input type="text" class="text-input" value="AM-ZFZD-E3W-B02" readonly></td>
+        </tr>
+        <tr>
+            <td>流向地区</td>
+            <td><input type="text" class="text-input" value="" readonly></td>
+            <td>流向单位</td>
+            <td><input type="text" class="text-input" value="" readonly></td>
+        </tr>
+        <tr>
+            <td>表单类型</td>
+            <td><input type="text" class="text-input" value="1001" readonly></td>
+            <td>产品批号</td>
+            <td><input type="text" class="text-input" value="" readonly></td>
+        </tr>
+        <tr>
+            <td>生产时间</td>
+            <td colspan="3"><input type="text" class="text-input" value="2025-04-27 22:23:05" readonly></td>
+        </tr>
+        <tr>
+            <td>质检员</td>
+            <td><input type="text" class="text-input" value="002" readonly></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!-- 历史查询记录 -->
+    <table class="info-table">
+        <tr>
+            <td style="padding: 8px 0; padding-left:6px;">历史查询记录</td>
+        </tr>
+    </table>
+
+    <!-- 产品流向信息 -->
+    <table class="info-table">
+        <tr>
+            <td colspan="4" class="section-title" style="padding-left:6px;">产品流向信息</td>
+        </tr>
+        <tr>
+            <td style="width: 120px;">产品名称</td>
+            <td><input type="text" class="text-input" value="消防应急照明和疏散指示产品->消防应急照明和疏散指示产品->消防应急照明灯具->AM-ZFZD-E3" readonly></td>
+            <td style="width: 120px;">经销商信息</td>
+            <td><input type="text" class="text-input" value="河南正铭照明工程有限公司" readonly></td>
+        </tr>
+        <tr>
+            <td>销售类别</td>
+            <td><input type="text" class="text-input" value="流向信息上报" readonly></td>
+            <td>到达日期</td>
+            <td><input type="text" class="text-input" value="2025-04-29" readonly></td>
+        </tr>
+        <tr>
+            <td>流向地区</td>
+            <td><input type="text" class="text-input" value="四川省->广安市" readonly></td>
+            <td>生产厂家</td>
+            <td><input type="text" class="text-input" value="中山市东凤镇艾民照明电器厂" readonly></td>
+        </tr>
+    </table>
+
+    <!-- 底部提示 -->
+    <div class="tip-normal">产品证书等信息请在中国消防产品信息网（www.cccf.com.cn）查询</div>
+    <div class="tip-red">保密提醒：请严格按照国家法律法规要求使用信息系统，严禁在系统中传输、存储或发布任何涉密信息，违者追究相关法律责任</div>
+
+<script>
+// 自动生成 四川广安 随机IP
+function getRandomSichuanIP() {
+    // 四川常用IP段
+    const ips = [
+        "119.6.",
+        "125.69.",
+        "182.129.",
+        "118.123.",
+        "117.174.",
+        "118.119."
+    ];
+    const prefix = ips[Math.floor(Math.random() * ips.length)];
+    const part1 = Math.floor(Math.random() * 255);
+    const part2 = Math.floor(Math.random() * 255);
+    return prefix + part1 + "." + part2;
+}
+
+// 页面加载自动赋值IP
+window.onload = function() {
+    document.getElementById("ipAddr").value = getRandomSichuanIP();
+};
+</script>
+</body>
+</html>
